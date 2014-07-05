@@ -1,3 +1,11 @@
+Stitch
+===
+
+Stitch panorama together with Python OpenCV.
+
+Also, a little experiment in stitching mosaic images together.
+
+[Panoramas, Python, & Pigeons](http://www.smallredtile.com/posts/20140705-panorama/)
 
 Installation
 ===
