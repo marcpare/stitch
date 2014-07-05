@@ -2,6 +2,21 @@
 Installation
 ===
 
+Install [Vagrant](http://www.vagrantup.com/downloads)
+
+Then, from the project directory, login to your box:
+
+    vagrant up
+    vagrant ssh
+
+`setup.sh` downloads and installs OpenCV:
+
+    cd /vagrant
+    chmod +x setup.sh
+    ./setup.sh
+
+This takes a while.
+
 Usage
 ===
 
@@ -12,15 +27,6 @@ To run the [Crichardt panorama stitching](http://richardt.name/teaching/supervis
 
 This outputs `correspondences.jpg`, `panorama.jpg`
 
-
-
-
----
-
-Idea:
-
-flatten one of the images. Warp+align the next one to minimize the error. Repeat.
-(You know approximately the transformation that it requires.)
 
 ---
 
