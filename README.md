@@ -27,6 +27,15 @@ To run the [Crichardt panorama stitching](http://richardt.name/teaching/supervis
 
 This outputs `correspondences.jpg`, `panorama.jpg`
 
+
+To run the simplified affine transformation calculation:
+
+    python affine/affine_many.py books/*
+
+This prints out a JSON blob that can be used to align the images.
+
+The [demo](http://smallredtile.com/align/) here uses this data.
+
 ---
 
 Research Notes:
