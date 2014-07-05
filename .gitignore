@@ -1,0 +1,8 @@
+*.JPG
+*.jpg
+*.png
+*.PNG
+.DS_Store
+.vagrant
+*.pyc
+crichardt/out
