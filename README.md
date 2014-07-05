@@ -9,11 +9,11 @@ Then, from the project directory, login to your box:
     vagrant up
     vagrant ssh
 
-`setup.sh` downloads and installs OpenCV:
+`provision.sh` downloads and installs OpenCV:
 
     cd /vagrant
     chmod +x setup.sh
-    ./setup.sh
+    ./provision.sh
 
 This takes a while.
 
@@ -27,10 +27,9 @@ To run the [Crichardt panorama stitching](http://richardt.name/teaching/supervis
 
 This outputs `correspondences.jpg`, `panorama.jpg`
 
-
 ---
 
-Results:
+Research Notes:
 
 So many applications of image stitching!
 
@@ -45,26 +44,7 @@ And subsequently, quite a variety of techniques.
 - Phase correlation with fft
 - SIFT, feature detection, homography
 
-Observations
-
-* Got 3 panorama's stitched together
-* Walking along the bookshelf confused the algorithm
-* autostitch worked great
-
-So many libraries! Didn't play with any (yet)
-
-Cool bugs.
-
-Filled out this exercise:
-http://richardt.name/teaching/supervisions/vision-2011/practical/
-
-Wow, as you go, the variety keeps increasing.
-
-* Stitching a panorama from 1 spot, only rotation
-* Stitching a panorama moving linearly (trickier, in fact, needs lots of overlap b/c of parallax)
-* Stitching a bunch of papers scanned by a scanner (or a microscope...)
-
-A very interesting point: why is it so hard to stitch together the bookcase? Why does moving change everything? (Perspective is everything.)
+---
 
 Think about parallax: an object closer will show more perspective change after translation than an object farther away. Think of two picture, one of an object close, one of an object far. Or, two objects in the same picture, one near and one far. What kind of affine transformation would work for both images? It's not possible; you have to know something about the geometry of the subject.
   
@@ -76,39 +56,9 @@ Think about parallax: an object closer will show more perspective change after t
 
 ---
 
-Simplify: align using corresponding features without perspective warp
+Install notes:
 
-Show the correspondences bookshelf image
-
-
----
-
-sudo apt-get update
-sudo apt-get install libopencv-dev
-sudo apt-get -y install python-dev python-numpy
-
-trying this...
 http://karytech.blogspot.in/2012/05/opencv-24-on-ubuntu-1204.html
-
-This worked, got `import cv2` to work in Python
-
-now...
-
-sudo apt-get install scipy
-
-sudo apt-get install fabric
-
----
-
-next: do this: 
-http://richardt.name/teaching/supervisions/vision-2011/practical/
-
----
-
-What about scripting Hugin from the command line?
-http://wiki.panotools.org/Panorama_scripting_in_a_nutshell#Creating_hugin_projects_on_the_command-line
-
----
 
 Another OpenCV install, this time to build the examples:
 
@@ -116,20 +66,6 @@ http://mitchtech.net/raspberry-pi-opencv/
 
 ---
 
-How to get stitching for work with translation:
-
-./stitching_detailed /vagrant/books/*.JPG --conf_thresh 0.8
-./stitching_detailed /vagrant/books/*.JPG --conf_thresh 0.3
-
----
-
-Panoramas of streets: the pros do it by hand in photoshop. They take lots of overlap in their images. The thought: "1 picture per column of pixels" !!
-
----
-
 http://wiki.panotools.org/Stitching_a_photo-mosaic
 
   A photo-mosaic is an image that is stitched together by photographs all taken from different viewpoints. This differs from the panorama where all images are taken from one single viewpoint but with different angles.
-
-
-
