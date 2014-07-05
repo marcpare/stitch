@@ -1,3 +1,10 @@
+#
+# from the project root:
+#
+# python affine/affine_many.py books/*
+#
+#
+
 import argparse as ap
 import affine
 import correspond
